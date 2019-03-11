@@ -1,3 +1,3 @@
 # Nemo
 
-Discord bot for saicopvp witch realm
+Discord bot for SaicoPvP
