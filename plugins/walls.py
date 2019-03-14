@@ -96,9 +96,10 @@ class Walls:
             print(self.count)
             if (self.count == self.start*60):
                 print(f'start {self.count/60} minutes')
-                pass
+                self.remind = await channel.send(f'{int(self.count/60)} minutes! @here', delete_after=self.interval*60)
             elif ((self.count - self.start*60) % (self.interval*60) == 0):
                 print(f'interval {self.count/60} minutes')
+                self.remind = await channel.send(f'{int(self.count/60)} minutes! @everyone', delete_after=self.interval*60)
             await asyncio.sleep(1)
             self.count += 1
 

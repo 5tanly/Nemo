@@ -11,7 +11,7 @@ import sqlite3
 import scripts.error
 import scripts.help
 
-bot = commands.Bot(command_prefix='!', case_insensitive=True, owner_id=252202327270883338)
+bot = commands.Bot(command_prefix='!', case_insensitive=True)
 bot.remove_command('help')
 
 @bot.command(name='help')
@@ -54,28 +54,23 @@ async def on_ready():
     print('------')
 
     plugin_list = os.listdir(f'{os.getcwd()}/plugins')
-    #print(plugin_list)
+    print(plugin_list)
 
     if __name__ == '__main__':
         for plugin in plugin_list:
             if plugin.endswith('.py'):
-                #print(plugin)
+                print(plugin)
                 plugin = f'plugins.{plugin.replace(".py","")}'
                 bot.load_extension(plugin)
                 print(f'Plugin {plugin.replace("plugins.","")}.py loaded')
             else:
                 pass
 
-# with open(f'{os.getcwd()}/token.txt', 'r') as token_file:
-#     token = token_file.read().strip()
-#
-# with open(f'{os.getcwd()}/guild.txt', 'r') as guild_file:
-#     bot.guild_id = int(guild_file.read().strip())
+with open(f'{os.getcwd()}/token.txt', 'r') as token_file:
+    token = token_file.read().strip()
+    print(token)
 
-bot.guild_id = 522797796361764865 #NEMODEV FOR TESTING
-#bot.guild_id = 360948906462412800 #MAIN SERVER
+with open(f'{os.getcwd()}/guild.txt', 'r') as guild_file:
+    bot.guild_id = int(guild_file.read().strip())
 
-#bot.run(token)
-
-bot.run('MzYwODc0MzA2ODkwMzY3MDA2.DqAplw.w2gsZ4lhB9C5-z4J23rH_3a8or4') #NEMO DEV FOR TESTING
-#bot.run('MzYwNjY0NTA5MTA4NTg0NDQ4.Dvc_qA.QvWPU7aI_EmnjtPWQ1tla_4rt0c') #MAIN BOT
+bot.run(token)
