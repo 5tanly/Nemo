@@ -1,13 +1,11 @@
 plugins/pycraft/account.txt
-#token.txt
+token.txt
 *.pyc
 .DS_Store
-#plugins/walls/database.db
+plugins/walls/database.db
 plugins/pycraft/database.db
 plugins/pycraft.py
 plugins/pycraft.pyt
 plugins/pycraft/fwho.txt
-plugins/random.py
-plugins/random.pyt
-plugins/random/reboots.json
-plugins/random/ddos.txt
+guild.txt
+token.txt
